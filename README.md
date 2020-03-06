@@ -34,5 +34,5 @@ Run the following line in your virtual environment
 python lab0.py
 ```
 
-## What you're supposed to see
+### What you're supposed to see
 ![alt text](https://raw.githubusercontent.com/raymondlee00/electric-field-and-equipotentials-mapping-lab/master/contour-map.PNG)
