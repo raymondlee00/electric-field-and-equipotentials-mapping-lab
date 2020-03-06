@@ -5,10 +5,13 @@ import numpy as np
 x = np.arange(1, 13, 1) # creates an array in the range of [1, 12) with an interval of 1 between any two elements [1, 2, 3,..., 12]
 y = np.arange(1, 11, 1) # creates an array in the range of [1, 10) with an interval of 1 between any two elements [1, 2, 3,..., 10]
 
-global content
-with open('graph.csv', 'r') as fin:
-    # parse the csv here
-    content = [[], []] # 2-d array of all voltage values
+global equipotentialValues
+with open('equipotentialValues.csv', 'r') as fin:
+    equipotentialValues = fin.readlines()
+    equipotentialValues = [line.strip().split(',') for line in equipotentialValues]
+    equipotentialValues = np.array(equipotentialValues)
+    equipotentialValues = equipotentialValues.astype(np.float)
+    print(equipotentialValues) # 2-d array of all voltage values
 
 X, Y = np.meshgrid(x, y) # X represents a 2-d array of all xcor values of each point in the grid
                          # Y represents a 2-d array of all ycor values of each point in the grid
@@ -36,7 +39,7 @@ X, Y = np.meshgrid(x, y) # X represents a 2-d array of all xcor values of each p
 #  [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 #  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 
-Z = np.array(content) # store csv values as a 2-d array here
+Z = np.array(equipotentialValues) # store csv values as a 2-d array here
 
 plt.contour(X, Y, Z, colors="black") # create the contour map (this does not show the plot) using X, Y, Z coordinates with a black coloring
 
