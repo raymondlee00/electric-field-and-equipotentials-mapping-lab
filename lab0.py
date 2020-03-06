@@ -11,10 +11,11 @@ with open('equipotentialvalues.csv', 'r') as fin:
     equipotentialValues = [line.strip().split(',') for line in equipotentialValues] # turn the contents of previously read csv into a 2-d array
     equipotentialValues = np.array(equipotentialValues) # cast python array into an np array
     equipotentialValues = equipotentialValues.astype(np.float) # case every element in the np array to be an np float type
-    print(equipotentialValues) # 2-d array of all voltage values
+    print(equipotentialValues) # 2-d np array of all voltage values
 
 X, Y = np.meshgrid(x, y) # X represents a 2-d array of all xcor values of each point in the grid
                          # Y represents a 2-d array of all ycor values of each point in the grid
+
 # X (10 rows and 12 columns)
 # [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 #  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -41,10 +42,11 @@ X, Y = np.meshgrid(x, y) # X represents a 2-d array of all xcor values of each p
 
 Z = np.array(equipotentialValues) # store csv values as a 2-d array here
 
-plt.contour(X, Y, Z, colors="black") # create the contour map (this does not show the plot) using X, Y, Z coordinates with a black coloring
+plt.contour(X, Y, Z) # create the contour map (this does not show the plot) using X, Y, Z coordinates with a black coloring
 
 plt.xlabel("A-L") # x-axis label
 plt.ylabel("1-10") # y-axis label
+# plt.clabel(cp, inline=True, fontsize=8) # contour curve labels; doesn't work because contour lines are dense in some parts
 plt.title("equipotentials contour map") # title
-plt.legend(['equipotential field lines']) # legend
+# plt.legend(['equipotential field lines']) # legend
 plt.show() # show the plot
