@@ -6,11 +6,11 @@ x = np.arange(1, 13, 1) # creates an array in the range of [1, 12) with an inter
 y = np.arange(1, 11, 1) # creates an array in the range of [1, 10) with an interval of 1 between any two elements [1, 2, 3,..., 10]
 
 global equipotentialValues
-with open('equipotentialValues.csv', 'r') as fin:
-    equipotentialValues = fin.readlines()
-    equipotentialValues = [line.strip().split(',') for line in equipotentialValues]
-    equipotentialValues = np.array(equipotentialValues)
-    equipotentialValues = equipotentialValues.astype(np.float)
+with open('equipotentialvalues.csv', 'r') as fin:
+    equipotentialValues = fin.readlines() # read every line of equipotentialvalues.csv (including newlines at the end)
+    equipotentialValues = [line.strip().split(',') for line in equipotentialValues] # turn the contents of previously read csv into a 2-d array
+    equipotentialValues = np.array(equipotentialValues) # cast python array into an np array
+    equipotentialValues = equipotentialValues.astype(np.float) # case every element in the np array to be an np float type
     print(equipotentialValues) # 2-d array of all voltage values
 
 X, Y = np.meshgrid(x, y) # X represents a 2-d array of all xcor values of each point in the grid
