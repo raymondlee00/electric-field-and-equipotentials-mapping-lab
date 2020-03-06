@@ -16,6 +16,10 @@ To enter your virtual environment, run the following:
 ```
 . env/bin/activate
 ```
+or...if you are on a Windows machine:
+```
+. env/Scripts/activate
+```
 
 To exit your virtual environment, run the following:
 ```
