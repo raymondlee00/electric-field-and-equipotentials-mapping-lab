@@ -33,3 +33,6 @@ Run the following line in your virtual environment
 ```
 python lab0.py
 ```
+
+## What you're supposed to see
+![alt text](./contour-map.png)
