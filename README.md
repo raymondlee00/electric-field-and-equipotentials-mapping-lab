@@ -35,4 +35,4 @@ python lab0.py
 ```
 
 ## What you're supposed to see
-![alt text](./contour-map.png)
+![alt text](https://raw.githubusercontent.com/raymondlee00/electric-field-and-equipotentials-mapping-lab/master/contour-map.PNG)
