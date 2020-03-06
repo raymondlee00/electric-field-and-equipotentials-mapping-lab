@@ -42,7 +42,9 @@ X, Y = np.meshgrid(x, y) # X represents a 2-d array of all xcor values of each p
 
 Z = np.array(equipotentialValues) # store csv values as a 2-d array here
 
-plt.contour(X, Y, Z) # create the contour map (this does not show the plot) using X, Y, Z coordinates with a black coloring
+cp = plt.contourf(X, Y, Z) # create the contour map (this does not show the plot) using X, Y, Z coordinates with a black coloring
+
+plt.colorbar(cp)
 
 plt.xlabel("A-L") # x-axis label
 plt.ylabel("1-10") # y-axis label
