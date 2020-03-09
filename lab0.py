@@ -42,13 +42,13 @@ X, Y = np.meshgrid(x, y) # X represents a 2-d array of all xcor values of each p
 
 Z = np.array(equipotentialValues) # store csv values as a 2-d array here
 
-cp = plt.contourf(X, Y, Z) # create the contour map (this does not show the plot) using X, Y, Z coordinates with a black coloring
+cp = plt.contourf(X, Y, Z) # create the contour map (this does not show the plot) using X, Y, Z coordinates; returns a color plot, i think?
 
-plt.colorbar(cp)
+plt.colorbar(cp) # creates a color bar
 
 plt.xlabel("A-L") # x-axis label
 plt.ylabel("1-10") # y-axis label
 # plt.clabel(cp, inline=True, fontsize=8) # contour curve labels; doesn't work because contour lines are dense in some parts
-plt.title("equipotentials contour map") # title
+plt.title("equipotential field lines contour map") # title
 # plt.legend(['equipotential field lines']) # legend
 plt.show() # show the plot
